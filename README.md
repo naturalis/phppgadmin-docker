@@ -42,7 +42,7 @@ docker run -p 8080:8080 andersevenrud/phppgadmin:latest
 
 An example setup with docker-compose, username postgres, password test:
 
-```
+```yaml
 ---
 version: "3"
 services:
@@ -53,8 +53,8 @@ services:
   phppgadmin:
     build: .
     environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_NAME: postgres
+      POSTGRES_HOST: postgres   # use POSTGRES_HOSTS for multiple databases
+      POSTGRES_NAME: postgres   # use POSTGRES_NAMES for multiple databases
     ports:
       - 8080:8080
 ...
